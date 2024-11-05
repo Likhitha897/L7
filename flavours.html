@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seasonal Flavors</title>
+</head>
+<body>
+    <h2>Seasonal Flavors</h2>
+    <form method="post">
+        <label>Flavor Name:</label>
+        <input type="text" name="name" required>
+        <label>Season:</label>
+        <input type="text" name="season" required>
+        <button type="submit">Add Flavor</button>
+    </form>
+    <ul>
+        {% for flavor in flavors %}
+            <li>{{ flavor['name'] }} - {{ flavor['season'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

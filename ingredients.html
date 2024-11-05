@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingredients</title>
+</head>
+<body>
+    <h2>Ingredients</h2>
+    <form method="post">
+        <label>Ingredient Name:</label>
+        <input type="text" name="name" required>
+        <label>Stock:</label>
+        <input type="number" name="stock" required>
+        <button type="submit">Add Ingredient</button>
+    </form>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient['name'] }} - Stock: {{ ingredient['stock'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

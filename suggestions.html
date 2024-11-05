@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Suggestions</title>
+</head>
+<body>
+    <h2>Customer Flavor Suggestions</h2>
+    <form method="post">
+        <label>Suggested Flavor Name:</label>
+        <input type="text" name="flavor_name" required>
+        <label>Allergies:</label>
+        <input type="text" name="allergies">
+        <button type="submit">Submit Suggestion</button>
+    </form>
+    <ul>
+        {% for suggestion in suggestions %}
+            <li>{{ suggestion['flavor_name'] }} - Allergies: {{ suggestion['allergies'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
